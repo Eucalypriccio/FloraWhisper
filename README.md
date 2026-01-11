@@ -69,7 +69,7 @@ Make sure to set `DASHSCOPE_API_KEY` as an envrionment variable for safety conce
 e.g. On Windows
 
 ```pwsh
-setx DASHSCOPE_API_KEY 'sk-xxxxxx'
+setx DASHSCOPE_API_KEY "sk-xxxxxx"
 # or
 [Environment]::SetEnvironmentVariable("DASHSCOPE_API_KEY", "YOUR_DASHSCOPE_API_KEY", [EnvironmentVariableTarget]::User)
 ```
