@@ -1,0 +1,56 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4FBF6" />
+      <stop offset="1" stop-color="#EAF3FF" />
+    </linearGradient>
+    <linearGradient id="leaf" x1="350" y1="220" x2="820" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399" />
+      <stop offset="1" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="tip" x1="710" y1="340" x2="840" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE68A" />
+      <stop offset="1" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect x="60" y="60" width="1080" height="780" rx="64" fill="url(#bg)" />
+  <rect x="60" y="60" width="1080" height="780" rx="64" fill="#FFFFFF" fill-opacity="0.35" />
+
+  <!-- subtle grid -->
+  <g opacity="0.10">
+    <path d="M120 180H1080" stroke="#0F172A" stroke-width="2" />
+    <path d="M120 300H1080" stroke="#0F172A" stroke-width="2" />
+    <path d="M120 420H1080" stroke="#0F172A" stroke-width="2" />
+    <path d="M120 540H1080" stroke="#0F172A" stroke-width="2" />
+    <path d="M120 660H1080" stroke="#0F172A" stroke-width="2" />
+    <path d="M240 120V780" stroke="#0F172A" stroke-width="2" />
+    <path d="M420 120V780" stroke="#0F172A" stroke-width="2" />
+    <path d="M600 120V780" stroke="#0F172A" stroke-width="2" />
+    <path d="M780 120V780" stroke="#0F172A" stroke-width="2" />
+    <path d="M960 120V780" stroke="#0F172A" stroke-width="2" />
+  </g>
+
+  <!-- leaf group -->
+  <g filter="url(#shadow)">
+    <path d="M392 630C412 480 520 320 660 260C810 196 942 250 960 372C980 505 866 622 708 676C574 721 434 714 392 630Z" fill="url(#leaf)" />
+    <!-- yellowing tip -->
+    <path d="M732 318C806 296 878 314 920 360C948 390 956 430 938 468C900 546 796 558 734 520C694 496 680 456 688 416C696 372 708 330 732 318Z" fill="url(#tip)" fill-opacity="0.95" />
+    <!-- midrib -->
+    <path d="M462 628C544 520 656 392 792 308" stroke="#064E3B" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round" />
+    <!-- veins -->
+    <path d="M560 584C612 566 672 524 724 470" stroke="#064E3B" stroke-opacity="0.25" stroke-width="8" stroke-linecap="round" />
+    <path d="M520 618C586 616 666 592 742 536" stroke="#064E3B" stroke-opacity="0.20" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+  <!-- caption -->
+  <g opacity="0.85">
+    <rect x="120" y="700" width="520" height="110" rx="28" fill="#FFFFFF" fill-opacity="0.70" />
+    <path d="M160 760H520" stroke="#0F172A" stroke-opacity="0.18" stroke-width="6" stroke-linecap="round" />
+    <path d="M160 728H410" stroke="#0F172A" stroke-opacity="0.24" stroke-width="10" stroke-linecap="round" />
+    <path d="M160 792H460" stroke="#0F172A" stroke-opacity="0.12" stroke-width="6" stroke-linecap="round" />
+  </g>
+</svg>

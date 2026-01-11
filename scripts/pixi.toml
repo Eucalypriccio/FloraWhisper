@@ -1,0 +1,14 @@
+[workspace]
+channels = ["conda-forge"]
+name = "scripts"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.12.*"
+
+[pypi-dependencies]
+dashscope = ">=1.25.7, <2"
+openai = ">=2.15.0, <3"

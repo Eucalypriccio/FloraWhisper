@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* 定义品牌颜色 */
+  --color-flora-primary: #4A7c59;
+  --color-flora-bg: #F5F7F2;
+  --color-flora-secondary: #8DA399;
+  --color-flora-sprout: #D6E4C6;
+  --color-flora-dark: #2C3E30;
+  
+  /* 
+     注意：在某些 Tailwind v4 版本中，直接在 @theme 中定义 --font-serif 可能不会自动更新 utility class。
+     我们可以保留这里的定义作为 token，但在下面显式创建类。
+  */
+  --font-serif-stack: var(--font-cinzel), var(--font-noto-serif), "Songti SC", "STSong", "SimSun", "Times New Roman", serif;
+  --font-sans-stack: var(--font-lato), "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /*以此覆盖默认的主题变量*/
+  --font-serif: var(--font-serif-stack);
+  --font-sans: var(--font-sans-stack);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* 定义动画 */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-sway: sway 4s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
   }
 }
 
+/* 
+   强制覆盖 Utilities 层
+   如果 @theme 的自动映射失败，这里会强制生效 
+*/
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-cinzel), var(--font-noto-serif), "Songti SC", "STSong", "SimSun", "Times New Roman", serif;
+  }
+  
+  .font-sans {
+    font-family: var(--font-lato), "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* 默认使用无衬线体 */
+  font-family: var(--font-sans-stack, sans-serif); 
+  background-color: var(--color-flora-bg);
+  color: var(--color-flora-dark);
 }
